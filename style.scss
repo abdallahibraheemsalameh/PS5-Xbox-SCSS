@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
+
+$left-bg-color: rgba(87, 84, 236, 0.7);
+$right-bg-color: rgba(43, 43, 43, 0.8);
+$left-btn-hover-color: rgba(87, 84, 236, 1);
+$right-btn-hover-color: rgba(28, 122, 28, 1);
+$hover-width: 75%;
+$other-width: 25%;
+$speed: 1000ms;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Lato", sans-serif;
+  font-size: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.sec {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 100vh;
+  z-index: 0;
+}
+.ps5 {
+  // no-repeat center center/cover
+  background: url("ps.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.xbox {
+  background: url("xbox.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: width 1s ease;
+}
+.heading {
+  color: #ffefef;
+  font-size: 4rem;
+  position: absolute;
+  top: 25%;
+  z-index: 2;
+}
+.btn {
+  color: #ffefef;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1.4rem 4.5rem;
+  border: #ffefef solid;
+  position: absolute;
+  top: 40%;
+  z-index: 2;
+}
+.ps-btn:hover {
+  background-color: $left-btn-hover-color;
+  border: none;
+  border-color: $left-btn-hover-color;
+}
+.xb-btn:hover {
+  background-color: $right-btn-hover-color;
+  border: none;
+  border-color: $right-btn-hover-color;
+}
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  z-index: 1;
+}
+.psblur {
+  background-color: $left-bg-color;
+}
+.xbblur {
+  background-color: $right-bg-color;
+}
+
+.active:hover {
+  width: 90vw;
+}
+// .active:hover .xbox {
+//   width: 25vw;
+// }
+
+@media (max-width: 800px) {
+  .heading {
+    font-size: 2rem;
+    top: 30%;
+  }
+
+  .btn {
+    padding: 1.2rem 3rem;
+  }
+  .btn:hover {
+    padding: 1.35rem 3.15rem;
+  }
+}
