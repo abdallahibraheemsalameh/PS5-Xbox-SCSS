@@ -37,20 +37,20 @@ body {
   width: 50vw;
   height: 100vh;
   z-index: 0;
+  transition: width 1s ease-in-out;
 }
 .ps5 {
   // no-repeat center center/cover
   background: url("ps.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  transition: all 1s ease-in-out;
 }
 .xbox {
   background: url("xbox.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  transition: width 1s ease;
 }
+
 .heading {
   color: #ffefef;
   font-size: 4rem;
@@ -65,19 +65,17 @@ body {
   justify-content: center;
   text-align: center;
   padding: 1.4rem 4.5rem;
-  border: #ffefef solid;
+  border: #ffefef solid 0.15rem;
   position: absolute;
   top: 40%;
   z-index: 2;
 }
 .ps-btn:hover {
   background-color: $left-btn-hover-color;
-  border: none;
   border-color: $left-btn-hover-color;
 }
 .xb-btn:hover {
   background-color: $right-btn-hover-color;
-  border: none;
   border-color: $right-btn-hover-color;
 }
 .blur {
@@ -85,8 +83,7 @@ body {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
-
+  width: 100%;
   z-index: 1;
 }
 .psblur {
@@ -99,9 +96,6 @@ body {
 .active:hover {
   width: 90vw;
 }
-// .active:hover .xbox {
-//   width: 25vw;
-// }
 
 @media (max-width: 800px) {
   .heading {
@@ -111,8 +105,5 @@ body {
 
   .btn {
     padding: 1.2rem 3rem;
-  }
-  .btn:hover {
-    padding: 1.35rem 3.15rem;
   }
 }
